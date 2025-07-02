@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: odoo
+    env: docker
+    plan: free
+    branch: main
+    dockerfilePath: Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+databases:
+  - name: odoo-postgres
+    databaseName: odoo
+    user: odoo
